@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package controlador;
 
 import gnu.io.CommPortIdentifier;
@@ -39,7 +35,6 @@ public class ControlePorta {
     private void initialize() {
         try {
             
-            System.out.println("entreue**************************************");
             /**
              * Define uma variável portId do tipo CommPortIdentifier para
              * realizar e receber a comunicação serial
@@ -49,17 +44,11 @@ public class ControlePorta {
 
                 //Tenta verificar se a porta COM informada existe
                 portId = CommPortIdentifier.getPortIdentifier(portaCOM);
-                System.out.println("****************************oioioioioioioioi");
-                //  portId = CommPortIdentifier.getPortIdentifier(cpi.getName());
-                // System.out.println(" Porta está true or false = " + portId.getName());
-                System.out.println(" Porta = " + portId.getName());
-            //    System.out.println("  Taxa = " + this.taxa);
-                //} catch (Exception e) {
-                // System.out.println("Porta COM não encontrada!!! "+portId.getName());
+                 System.out.println(" Porta = " + portId.getName());
+           
             } catch (NoSuchPortException npe) {
                 //Caso a porta COM não exista será exibido um erro
-                System.out.println("tchau*********************************************");
-                JOptionPane.showMessageDialog(null, "Porta COM não encontrada.",
+               JOptionPane.showMessageDialog(null, "Porta COM não encontrada.",
                         "Porta COM", JOptionPane.PLAIN_MESSAGE);
 //                System.out.println("Porta COM não encontrada!!! " + portId.getName());
             }
@@ -91,18 +80,7 @@ public class ControlePorta {
 
     /**
      * @param opcao - Valor a ser enviado pela porta serial
-     */
-    /*
-     * public void enviaDados(int opcao) { try {
-     * serialOut.write(opcao);//escreve o valor na porta serial para ser enviado
-     * // serialOut.write(1);//escreve o valor na porta serial para ser enviado
-     *
-     * } catch (IOException ex) { JOptionPane.showMessageDialog(null, "Não foi
-     * possível enviar o dado. ", "Enviar dados", JOptionPane.PLAIN_MESSAGE); }
-     * }
-     */
-    /*
-     * Converter para bytes para enviar dados
+    * Converter para bytes para enviar dados
      */
     public void enviaDados(String opcao) {
         try {

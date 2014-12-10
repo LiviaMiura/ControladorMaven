@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.8" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Eleva&#xe7;&#xe3;o"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jAzimute">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Azimute"/>
+      </Properties>
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -26,97 +38,86 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
-                      <Component id="tbcamera" min="-2" pref="816" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="tbcamera" min="-2" pref="554" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="jBResetpt" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jBClose" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="bSave" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="bCapture" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
-                                  </Group>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="jBResetpt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jBLeft" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jBUp" alignment="0" pref="72" max="32767" attributes="0"/>
                               </Group>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jBCameraOFF" min="-2" pref="106" max="-2" attributes="0"/>
-                                  <Component id="jBCameraON" max="32767" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jBClose" min="-2" pref="64" max="-2" attributes="0"/>
+                                  <Component id="jBRight" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jBDown" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="bCapture" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="jBCameraON" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="bSave" min="-2" pref="74" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="jBCameraOFF" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                       </Group>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="482" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="221" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" pref="175" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="408" max="-2" attributes="0"/>
-                      <Component id="jBLeft" min="-2" pref="64" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jBDown" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="JTextGraus" max="32767" attributes="0"/>
-                                  <Component id="jBUp" min="-2" pref="72" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jBRight" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="152" max="-2" attributes="0"/>
+                      <Component id="BotaoAzimute" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="JTextGraus" min="-2" pref="155" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="BotaoElevacao" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="69" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
               <Component id="jLabel1" min="-2" pref="62" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel2" min="-2" pref="30" max="-2" attributes="0"/>
-              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="jBClose" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jBResetpt" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
-                      <Component id="jBCameraON" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jBCameraOFF" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="159" max="32767" attributes="0"/>
-                      <Component id="bCapture" min="-2" pref="27" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="bSave" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="tbcamera" max="32767" attributes="0"/>
+              <Component id="tbcamera" min="-2" pref="263" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jBUp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jBDown" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jBUp" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                      <Component id="jBRight" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jBLeft" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="JTextGraus" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="bCapture" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                  <Component id="jBLeft" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jBRight" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jBCameraON" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jBDown" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="bSave" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jBResetpt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jBClose" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jBCameraOFF" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="JTextGraus" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BotaoAzimute" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BotaoElevacao" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -148,14 +149,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bSaveActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="16" style="1"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value=" Rede Colaborativa na Am&#xe9;rica Latina para a Investiga&#xe7;&#xe3;o de ELTe EAE de Tempestades"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jBLeft">
       <Properties>
@@ -228,6 +221,23 @@
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jBResetptMouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="BotaoAzimute">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Azimute"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BotaoAzimuteMouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="BotaoElevacao">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Eleva&#xe7;&#xe3;o"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BotaoElevacaoMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoElevacaoActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

@@ -31,7 +31,10 @@ public class WebCamForm extends javax.swing.JFrame {
     public WebCamForm() {
         initComponents();
         try {
+      
             initCamera();
+                connArduino.resetPantilt();
+            
         } catch (IOException ex) {
             Logger.getLogger(WebCamForm.class.getName()).log(Level.SEVERE, null, ex);
         } catch (NoPlayerException ex) {
@@ -64,11 +67,12 @@ public class WebCamForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
+        jAzimute = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         tbcamera = new javax.swing.JToggleButton();
         bCapture = new javax.swing.JButton();
         bSave = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         jBLeft = new javax.swing.JButton();
         JTextGraus = new javax.swing.JTextField();
         jBDown = new javax.swing.JButton();
@@ -78,6 +82,12 @@ public class WebCamForm extends javax.swing.JFrame {
         jBCameraON = new javax.swing.JButton();
         jBCameraOFF = new javax.swing.JButton();
         jBResetpt = new javax.swing.JButton();
+        BotaoAzimute = new javax.swing.JButton();
+        BotaoElevacao = new javax.swing.JButton();
+
+        jButton1.setText("Elevação");
+
+        jAzimute.setText("Azimute");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -102,9 +112,6 @@ public class WebCamForm extends javax.swing.JFrame {
                 bSaveActionPerformed(evt);
             }
         });
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel2.setText(" Rede Colaborativa na América Latina para a Investigação de ELTe EAE de Tempestades");
 
         jBLeft.setText("LEFT");
         jBLeft.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -188,6 +195,25 @@ public class WebCamForm extends javax.swing.JFrame {
             }
         });
 
+        BotaoAzimute.setText("Azimute");
+        BotaoAzimute.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotaoAzimuteMouseClicked(evt);
+            }
+        });
+
+        BotaoElevacao.setText("Elevação");
+        BotaoElevacao.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotaoElevacaoMouseClicked(evt);
+            }
+        });
+        BotaoElevacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoElevacaoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -195,87 +221,80 @@ public class WebCamForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addComponent(tbcamera, javax.swing.GroupLayout.PREFERRED_SIZE, 816, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(36, 36, 36)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jBResetpt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jBClose, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(bSave, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(bCapture, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(28, 28, 28)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jBCameraOFF, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jBCameraON, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(482, 482, 482)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(408, 408, 408)
-                        .addComponent(jBLeft, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(41, 41, 41)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jBDown)
+                            .addComponent(tbcamera, javax.swing.GroupLayout.PREFERRED_SIZE, 554, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(JTextGraus)
-                                    .addComponent(jBUp, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jBRight))))
+                                    .addComponent(jBResetpt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jBLeft, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jBUp, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jBClose, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jBRight)
+                                    .addComponent(jBDown))
+                                .addGap(37, 37, 37)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(bCapture)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jBCameraON))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(bSave, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jBCameraOFF))))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(131, 131, 131)
-                        .addComponent(jLabel2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(221, 221, 221)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(152, 152, 152)
+                        .addComponent(BotaoAzimute)
+                        .addGap(27, 27, 27)
+                        .addComponent(JTextGraus, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(BotaoElevacao)))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jBClose)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jBResetpt)
-                        .addGap(109, 109, 109)
-                        .addComponent(jBCameraON)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jBCameraOFF)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE)
-                        .addComponent(bCapture, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(bSave))
-                    .addComponent(tbcamera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jBUp)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jBRight)
-                        .addComponent(jBLeft))
-                    .addComponent(JTextGraus, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jBDown)
-                .addGap(58, 58, 58))
+                .addComponent(tbcamera, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBUp)
+                    .addComponent(jBDown))
+                .addGap(9, 9, 9)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bCapture, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBLeft)
+                    .addComponent(jBRight)
+                    .addComponent(jBCameraON))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bSave)
+                    .addComponent(jBResetpt)
+                    .addComponent(jBClose)
+                    .addComponent(jBCameraOFF))
+                .addGap(46, 46, 46)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JTextGraus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotaoAzimute)
+                    .addComponent(BotaoElevacao))
+                .addGap(46, 46, 46))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void bCaptureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCaptureActionPerformed
-        String diretorio = "C:/ProjetoLeona/Observações/";
-        String observacao = "Evento ";
+       // String diretorio = "C:/ProjetoLeona/Observações/";
+       // String observacao = "Evento ";
 
          if ("Capture".equals(evt.getActionCommand())) {
-             capturaImagem = new CapturaImagem(diretorio, observacao, this);              
+             capturaImagem = new CapturaImagem(this);              
              capturaImagem.start();
          }
           else{
@@ -356,20 +375,33 @@ public class WebCamForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jBCloseMouseClicked
 
     private void jBCameraONMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBCameraONMouseClicked
-        String graus = String.valueOf(JTextGraus.getText());
-        connArduino.comunicacaoArduino(jBCameraON, graus);
+   //     String graus = String.valueOf(JTextGraus.getText());
+        connArduino.cameraON();
     }//GEN-LAST:event_jBCameraONMouseClicked
 
     private void jBCameraOFFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBCameraOFFMouseClicked
 
-        String graus = String.valueOf(JTextGraus.getText());
-        connArduino.comunicacaoArduino(jBCameraOFF, graus);
+     connArduino.cameraOFF();
     }//GEN-LAST:event_jBCameraOFFMouseClicked
 
     private void jBResetptMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBResetptMouseClicked
         String graus = String.valueOf(JTextGraus.getText());
         connArduino.comunicacaoArduino(jBResetpt, graus);
     }//GEN-LAST:event_jBResetptMouseClicked
+
+    private void BotaoElevacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoElevacaoActionPerformed
+
+    }//GEN-LAST:event_BotaoElevacaoActionPerformed
+
+    private void BotaoAzimuteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoAzimuteMouseClicked
+         String graus = String.valueOf(JTextGraus.getText());
+        connArduino.calculoAzimute(BotaoAzimute, graus);
+    }//GEN-LAST:event_BotaoAzimuteMouseClicked
+
+    private void BotaoElevacaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoElevacaoMouseClicked
+             String graus = String.valueOf(JTextGraus.getText());
+        connArduino.calculoElevacao(BotaoElevacao, graus);
+    }//GEN-LAST:event_BotaoElevacaoMouseClicked
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -379,9 +411,12 @@ public class WebCamForm extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotaoAzimute;
+    private javax.swing.JButton BotaoElevacao;
     private javax.swing.JTextField JTextGraus;
     private javax.swing.JButton bCapture;
     private javax.swing.JButton bSave;
+    private javax.swing.JButton jAzimute;
     private javax.swing.JButton jBCameraOFF;
     private javax.swing.JButton jBCameraON;
     private javax.swing.JButton jBClose;
@@ -390,8 +425,8 @@ public class WebCamForm extends javax.swing.JFrame {
     private javax.swing.JButton jBResetpt;
     private javax.swing.JButton jBRight;
     private javax.swing.JButton jBUp;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JToggleButton tbcamera;
     // End of variables declaration//GEN-END:variables
 }
