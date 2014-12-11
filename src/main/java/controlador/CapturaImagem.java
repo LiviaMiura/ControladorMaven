@@ -5,20 +5,17 @@
  */
 package controlador;
 
-import JImage.JIResizeImage;
 import java.awt.FileDialog;
 import java.awt.Frame;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.Month;
-import java.util.Calendar;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -29,14 +26,14 @@ import javax.media.util.BufferToImage;
 
 /**
  *
- * @author Admin
+ * @author Leona
  */
 class CapturaImagem extends Thread {
 
-    private WebCamForm webCamForm;
+    private final WebCamForm webCamForm;
     String nfile;
     BufferedImage bi;
-    LocalDateTime agora;
+    LocalDateTime agora, timeDir;
 
     CapturaImagem(WebCamForm webCamForm) {
         // this.diretorio = diretorio;
@@ -46,13 +43,19 @@ class CapturaImagem extends Thread {
 
     public void run() {
 
-        String diretorio = "C:/ProjetoLeona/Observações/Evento";
+        Date date = new Date(System.currentTimeMillis());
+        SimpleDateFormat format2 = new SimpleDateFormat("hh mm ss");
+        String formatada = format2.format(date);
 
+        String diretorio = "C:/ProjetoLeona/Visualizar/";
+        String observacao = "Evento "
+                + "" + localDate().format(DateTimeFormatter.ofPattern("dd MM yyyy"))
+                + " " + formatada
+                + "/";
         String imagem;
 
         int[] a = new int[1080000];
-        File dir = new File("C:/ProjetoLeona/Observações/Evento");
-        
+        File dir = new File(diretorio + observacao);
 
         FrameGrabbingControl fgc = (FrameGrabbingControl) webCamForm.player.getControl("javax.media.control.FrameGrabbingControl");
         Buffer buffer = fgc.grabFrame();
@@ -65,12 +68,15 @@ class CapturaImagem extends Thread {
 
             for (int i = 0; i < a.length; i++) {
 
-                agora = LocalDateTime.now();
+                //agora = LocalDateTime.now();
+                Date date1 = new Date(System.currentTimeMillis());
+                SimpleDateFormat hora = new SimpleDateFormat("HH mm ss");
 
                 FileDialog fd = new FileDialog(new Frame(), " ", FileDialog.SAVE);
-                imagem = "[" + i + "]";
-                System.out.println("imagem[" + i + "]  - " + agora);
-                fd.setDirectory(diretorio);
+
+                imagem = "[Evento" + i + "]" + localDate() + " " + hora.format(date1);
+                System.out.println("Evento " + i + "]" + localDate() + " " + hora.format(date1));
+                fd.setDirectory(diretorio + observacao);
 
                 fd.setFile(imagem);
 
@@ -91,37 +97,17 @@ class CapturaImagem extends Thread {
                 }
             }
         } else {
-             File dir1 = new File("C:\\ProjetoLeona\\Observações\\EventoElse");
-            
-            dir1.mkdir();
-             for (int i = 0; i < a.length; i++) {
 
-                agora = LocalDateTime.now();
-
-                FileDialog fd = new FileDialog(new Frame(), " ", FileDialog.SAVE);
-                imagem = "[" + i + "]";
-                System.out.println("imagem[" + i + "]  - " + agora);
-                fd.setDirectory(diretorio);
-
-                fd.setFile(imagem);
-
-                if (fd.getFile() != null) {
-                    nfile = fd.getDirectory() + fd.getFile() + ".jpg";
-                    try {
-
-                        File make = new File(nfile);
-                        try {
-
-                            ImageIO.write(bi, "jpg", make);
-                        } catch (IOException ex) {
-
-                            Logger.getLogger(WebCamForm.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-                    } catch (Exception ex) {
-                    }
-                }
-            }
             System.out.println("Nao foi possivel criar o diretorio");
         }
     }
+
+    private LocalDate localDate() {
+
+        LocalDate hoje = LocalDate.now();
+        DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd MM yyyy");
+        hoje.format(formatador); //08/04/2014
+        return hoje;
+    }
+
 }

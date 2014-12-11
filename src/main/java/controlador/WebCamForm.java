@@ -288,13 +288,11 @@ public class WebCamForm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void bCaptureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCaptureActionPerformed
-       // String diretorio = "C:/ProjetoLeona/Observações/";
-       // String observacao = "Evento ";
-
-         if ("Capture".equals(evt.getActionCommand())) {
-             capturaImagem = new CapturaImagem(this);              
+             
+        if ("Capture".equals(evt.getActionCommand())) {
+             capturaImagem = new CapturaImagem(this);                  
              capturaImagem.start();
          }
           else{
@@ -304,15 +302,7 @@ public class WebCamForm extends javax.swing.JFrame {
          }
    
     }//GEN-LAST:event_bCaptureActionPerformed
-
-    private void dateTime() {
-        Date date = new Date(System.currentTimeMillis());
-        System.out.println(new Date());
-        System.out.println("Data" + date);
-
-    }
-
-
+  
     private void bSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSaveActionPerformed
         System.out.println("********************************parar de tirar fotos*******************************");
          capturaImagem.stop();
