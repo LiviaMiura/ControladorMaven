@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controlador;
+package br.leona.controlador.swing;
 
 import java.awt.FileDialog;
 import java.awt.Frame;
@@ -36,8 +36,7 @@ class CapturaImagem extends Thread {
     LocalDateTime agora, timeDir;
 
     CapturaImagem(WebCamForm webCamForm) {
-        // this.diretorio = diretorio;
-        //  this.observacao = observacao;
+      
         this.webCamForm = webCamForm;
     }
 

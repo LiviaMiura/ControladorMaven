@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controlador;
+package br.leona.controlador.swing;
 
 import java.io.IOException;
 import java.awt.Image;
@@ -17,7 +17,6 @@ import javax.media.Manager;
 import javax.swing.ImageIcon;
 import javax.swing.JToggleButton;
 import java.awt.image.BufferedImage;
-import java.util.Date;
 
 
 public class WebCamForm extends javax.swing.JFrame {    

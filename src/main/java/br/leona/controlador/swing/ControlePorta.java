@@ -1,5 +1,5 @@
 
-package controlador;
+package br.leona.controlador.swing;
 
 import gnu.io.CommPortIdentifier;
 import gnu.io.NoSuchPortException;
