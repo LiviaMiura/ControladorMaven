@@ -36,7 +36,7 @@ class CapturaImagem extends Thread {
     LocalDateTime agora, timeDir;
 
     CapturaImagem(WebCamForm webCamForm) {
-      
+
         this.webCamForm = webCamForm;
     }
 
@@ -52,21 +52,19 @@ class CapturaImagem extends Thread {
                 + " " + formatada
                 + "/";
         String imagem;
-
         int[] a = new int[1080000];
         File dir = new File(diretorio + observacao);
-
-        FrameGrabbingControl fgc = (FrameGrabbingControl) webCamForm.player.getControl("javax.media.control.FrameGrabbingControl");
-        Buffer buffer = fgc.grabFrame();
-
-        BufferToImage bti = new BufferToImage((VideoFormat) buffer.getFormat());
-        Image image = bti.createImage(buffer);
-        bi = (BufferedImage) image;
 
         if (dir.mkdirs()) {
 
             for (int i = 0; i < a.length; i++) {
 
+                FrameGrabbingControl fgc = (FrameGrabbingControl) webCamForm.player.getControl("javax.media.control.FrameGrabbingControl");
+                Buffer buffer = fgc.grabFrame();
+
+                BufferToImage bti = new BufferToImage((VideoFormat) buffer.getFormat());
+                Image image = bti.createImage(buffer);
+                bi = (BufferedImage) image;
                 //agora = LocalDateTime.now();
                 Date date1 = new Date(System.currentTimeMillis());
                 SimpleDateFormat hora = new SimpleDateFormat("HH mm ss");

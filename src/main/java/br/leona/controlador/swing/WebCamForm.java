@@ -179,11 +179,21 @@ public class WebCamForm extends javax.swing.JFrame {
                 jBCameraONMouseClicked(evt);
             }
         });
+        jBCameraON.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBCameraONActionPerformed(evt);
+            }
+        });
 
         jBCameraOFF.setText("Camera OFF");
         jBCameraOFF.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jBCameraOFFMouseClicked(evt);
+            }
+        });
+        jBCameraOFF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBCameraOFFActionPerformed(evt);
             }
         });
 
@@ -193,11 +203,21 @@ public class WebCamForm extends javax.swing.JFrame {
                 jBResetptMouseClicked(evt);
             }
         });
+        jBResetpt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBResetptActionPerformed(evt);
+            }
+        });
 
         BotaoAzimute.setText("Azimute");
         BotaoAzimute.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BotaoAzimuteMouseClicked(evt);
+            }
+        });
+        BotaoAzimute.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoAzimuteActionPerformed(evt);
             }
         });
 
@@ -391,6 +411,22 @@ public class WebCamForm extends javax.swing.JFrame {
              String graus = String.valueOf(JTextGraus.getText());
         connArduino.calculoElevacao(BotaoElevacao, graus);
     }//GEN-LAST:event_BotaoElevacaoMouseClicked
+
+    private void jBCameraONActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCameraONActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBCameraONActionPerformed
+
+    private void jBCameraOFFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCameraOFFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBCameraOFFActionPerformed
+
+    private void jBResetptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBResetptActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBResetptActionPerformed
+
+    private void BotaoAzimuteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAzimuteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoAzimuteActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {

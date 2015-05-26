@@ -205,6 +205,7 @@
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jBCameraONMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBCameraONActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jBCameraOFF">
@@ -213,6 +214,7 @@
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jBCameraOFFMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBCameraOFFActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jBResetpt">
@@ -221,6 +223,7 @@
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jBResetptMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBResetptActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BotaoAzimute">
@@ -229,6 +232,7 @@
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BotaoAzimuteMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoAzimuteActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BotaoElevacao">
