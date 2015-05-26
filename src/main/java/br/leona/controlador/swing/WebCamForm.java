@@ -17,7 +17,9 @@ import javax.media.Manager;
 import javax.swing.ImageIcon;
 import javax.swing.JToggleButton;
 import java.awt.image.BufferedImage;
-
+/*
+Versão antiga do controlador
+*/
 
 public class WebCamForm extends javax.swing.JFrame {    
     Controlador conn = new Controlador();
